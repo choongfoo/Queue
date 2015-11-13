@@ -1,5 +1,6 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 #define l 1000
 
@@ -15,6 +16,24 @@ void Insert();
 int  Delete();
 void Display();
 NODE *front, *rear;   /* Global Declarations */
+
+int validplate()
+{
+	char s[10], d[5], c[2];
+	printf("Bus number plate: ");
+	// able to match putrajaya1234a
+	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+	while (matched != 3){
+		scanf("%*[^\n]%*1[\n]"); // another method to clear input buffer
+		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+		printf("and is typed correctly.\nBus Numer Plate : ");
+		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+	}
+	if (c != '\n') scanf("%*[^\n]%*1[\n]");
+	for (int i = 0; i < strlen(s); i++) s[i] = toupper(s[i]);
+	printf("The bus number plate is: %s%s%c\n", s, d, c == '\n' ? '\0' : toupper(c));
+	system("timeout -t 30");
+}
 
 main()
 {
