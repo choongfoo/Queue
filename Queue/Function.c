@@ -3,23 +3,6 @@
 #include <ctype.h>
 #include "Function.h"
 
-int validplate()
-{
-	printf("Bus number plate: ");
-	// able to match putrajaya1234a
-	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
-	while (matched != 3){
-		scanf("%*[^\n]%*1[\n]"); // another method to clear input buffer
-		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
-		printf("and is typed correctly.\nBus Numer Plate : ");
-		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
-	}
-	if (temp->c != '\n') scanf("%*[^\n]%*1[\n]");
-	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
-	temp->c == '\n' ? '\0' : toupper(temp->c);
-	//system("timeout -t 30");
-}
-
 void Insert()
 {
 	temp = malloc(sizeof(node));
@@ -43,6 +26,24 @@ void Insert()
 		}       /* Insert End */
 		printf(" Node has been inserted at End Successfully !!");
 	}
+}
+
+int validplate(void)
+{
+	printf("Bus number plate: ");
+	// able to match putrajaya1234a
+	fflush(stdin); //i can't use scanf("%*[^\n]%*1[\n]") here and i don't know why!
+	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
+	while (matched != 3){
+		scanf("%*[^\n]%*1[\n]"); // another method to clear input buffer
+		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+		printf("and is typed correctly.\nBus Numer Plate : ");
+		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
+	}
+	if (temp->c != '\n') scanf("%*[^\n]%*1[\n]");
+	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
+	temp->c == '\n' ? '\0' : toupper(temp->c);
+	//system("timeout -t 30");
 }
 
 int Delete()

@@ -1,37 +1,35 @@
-﻿Build started 13/11/2015 21:45:30.
+﻿Build started 14/11/2015 19:37:25.
      1>Project "C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Queue\Queue.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\BusQueue\BusQueue\Function.c Main.c
-         Main.c
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(30): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(48): warning C4013: 'getch' undefined; assuming extern returning int
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(59): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(59): warning C4024: 'fgets' : different types for formal and actual parameter 1
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(62): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(62): warning C4024: 'fgets' : different types for formal and actual parameter 1
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(65): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(65): warning C4024: 'fgets' : different types for formal and actual parameter 1
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(93): warning C4047: 'return' : 'int' differs in levels of indirection from 'NODE *'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\main.c(83): warning C4101: 'info' : unreferenced local variable
+         D:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Function.c
          Function.c
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\busqueue\busqueue\function.c(22): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(9): warning C4013: 'validplate' undefined; assuming extern returning int
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(12): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(12): warning C4024: 'fgets' : different types for formal and actual parameter 1
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(15): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(15): warning C4024: 'fgets' : different types for formal and actual parameter 1
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(36): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\busqueue\busqueue\function.c(27): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\busqueue\busqueue\function.c(29): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(41): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\busqueue\busqueue\function.c(31): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(43): warning C4047: '!=' : 'char [2]' differs in levels of indirection from 'int'
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(43): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\busqueue\busqueue\function.c(32): warning C4013: 'strlen' undefined; assuming extern returning int
-         Generating Code...
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(44): warning C4013: 'strlen' undefined; assuming extern returning int
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(45): warning C4047: '==' : 'char [2]' differs in levels of indirection from 'int'
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(45): warning C4047: 'function' : 'int' differs in levels of indirection from 'char [2]'
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(45): warning C4024: 'toupper' : different types for formal and actual parameter 1
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(61): warning C4047: 'return' : 'int' differs in levels of indirection from 'node *'
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(51): warning C4101: 'info' : unreferenced local variable
+     1>c:\users\user\desktop\apu stuffs\sem4\dbds\assignment\queue\queue\function.c(47): warning C4716: 'validplate' : must return a value
        Link:
          D:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Debug\Queue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Debug\Queue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Debug\Queue.lib" /MACHINE:X86 Debug\Function.obj
          Debug\Main.obj
-     1>Main.obj : error LNK2005: _main already defined in Function.obj
-     1>C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Debug\Queue.exe : fatal error LNK1169: one or more multiply defined symbols found
-     1>Done Building Project "C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Queue\Queue.vcxproj" (Build target(s)) -- FAILED.
+         Queue.vcxproj -> C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Debug\Queue.exe
+     1>Done Building Project "C:\Users\User\Desktop\APU Stuffs\SEM4\DBDS\Assignment\Queue\Queue\Queue.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.45
+Time Elapsed 00:00:00.41
