@@ -16,7 +16,7 @@ node *front, *rear, *temp;
 void Insert();
 int  Delete();
 void Display();
-void search();
+void Search();
 _Bool validnum();
 _Bool validchar();
 #endif

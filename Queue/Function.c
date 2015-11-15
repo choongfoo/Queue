@@ -36,14 +36,14 @@ void Insert()
 		temp->link = NULL;
 		//I dont know why i set limit = 1 but i can insert 2 times
 		if (front == NULL)
-			queue[count] = front = rear = temp; /* First Node? */
+			queue[count] = front = rear = temp; /* First Node */
 		else
 		{
 			queue[count] = rear->link = temp;
 			queue[count] = rear = temp;
 			count++;
 		}       /* Insert End */
-		printf(" Node has been inserted at End Successfully !!\n");
+		printf("\nNode has been inserted at End Successfully !!\n");
 		system("pause");
 	}
 
@@ -132,7 +132,7 @@ int Delete()
 			rear = NULL;
 		front = front->link;
 		t->link = NULL;
-		printf("Deleted Node(From Front)with the Data: %s%s %s\n", t->s, t->d, t->c);
+		printf("\nDeleted Node(From Front)with the Data: %s%s %s\n", t->s, t->d, t->c);
 		free(t);
 		return(front);
 	}
@@ -159,7 +159,7 @@ void Display()
 	}
 }
 
-void search()
+void Search()
 {
 	printf("test");
 }
