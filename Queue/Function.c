@@ -36,7 +36,10 @@ void Insert()
 		temp->link = NULL;
 		//I dont know why i set limit = 1 but i can insert 2 times
 		if (front == NULL)
+		{
 			queue[count] = front = rear = temp; /* First Node */
+			count++;
+		}
 		else
 		{
 			queue[count] = rear->link = temp;
@@ -161,5 +164,31 @@ void Display()
 
 void Search()
 {
-	printf("test");
+	node *t;
+	char s[l], d[l], c[l];
+	
+	printf("Search:");
+	fflush(stdin);
+	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+	while (matched != 3){
+		scanf("%*[^\n]%*1[\n]");
+		fflush(stdin);// another method to clear input buffer
+		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+		printf("and is typed correctly.\nBus Numer Plate : ");
+		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+	}
+	if (c != '\n') scanf("%*[^\n]%*1[\n]");
+	for (int i = 0; i < strlen(s); i++) 
+		s[i] = toupper(s[i]);
+	c == '\n' ? '\0' : toupper(c);
+
+
+	while (temp != NULL)
+	{
+		if (strcmp(temp->s, s), strcmp(temp->d, d), strcmp(temp->c, c))
+		{
+			printf("key found\n");
+		}
+	}
+	printf("Key not found\n");
 }
