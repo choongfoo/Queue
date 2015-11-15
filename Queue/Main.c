@@ -2,44 +2,48 @@
 #include <stdlib.h>
 #include "Function.h"
 
-#define l 1000
-
-
-
 node *front, *rear;   /* Global Declarations */
-
-
 
 main()
 {
 	/* Main Program */
-	int opn, elem;
+	int choice;
 	front = rear = NULL;
-	do
+	while (1)
 	{
 		system("cls");
 		printf("\n ### Linked List Implementation of QUEUE Operations ### \n\n");
-		printf("\n Press 1-Insert, 2-Delete, 3-Display,4-Exit\n");
-		printf("\n Your option ? ");
-		scanf("%d", &opn);
-		switch (opn)
+		printf("THE SIZE OF QUEUE IS %d", N);
+		printf("\n1 - Insert\n2 - Delete\n3 - Display\n4 - search\n5 - Exit\n");
+		printf("\nSelection: ");
+		fflush(stdin);
+		scanf("%d", &choice);
+
+		switch (choice)
 		{
 		case 1:
 			Insert();
 			break;
 		case 2:
-			elem = Delete();
-			if (elem != -1)
-				printf(" Deleted Node(From Front)with the Data: %d\n", elem);
+			Delete();
+			system("pause");
 			break;
-		case 3: printf("Linked List Implementation of Queue: Status:\n");
-			Display(); break;
-		case 4: printf("\n\n Terminating \n\n"); break;
-		default: printf("\n\nInvalid Option !!! Try Again !! \n\n");
+		case 3:
+			printf("\nLinked List Implementation of Queue: Status:\n");
+			Display();
+			system("pause");
+			break;
+		case 4:
+			search();
+			break;
+		case 5:
+			exit(0);
+			break;
+		default:
+			printf("\nInvalid input!!\n\a");
+			system("pause");
 			break;
 		}
-		printf("\n\n\n\n  Press a Key to Continue . . . ");
-		getch();
-	} while (opn != 4);
+	}
 }
 
