@@ -35,7 +35,8 @@ int validplate(void)
 	fflush(stdin); //i can't use scanf("%*[^\n]%*1[\n]") here and i don't know why!
 	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
 	while (matched != 3){
-		scanf("%*[^\n]%*1[\n]"); // another method to clear input buffer
+		scanf("%*[^\n]%*1[\n]");
+		fflush(stdin);// another method to clear input buffer
 		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
 		printf("and is typed correctly.\nBus Numer Plate : ");
 		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
