@@ -125,7 +125,7 @@ int Delete()
 	node *t;
 	if (front == NULL)
 	{
-		printf("Underflow!!!\n");
+		printf("Underflow!!!\n\a");
 		return -1;
 	}
 	else
@@ -146,7 +146,7 @@ void Display()
 	node *t;
 
 	if (front == NULL) 
-		printf("Empty Queue\n");
+		printf("Empty Queue\n\a");
 	else
 	{
 		t = front;
@@ -165,30 +165,46 @@ void Display()
 void Search()
 {
 	node *t;
-	char s[l], d[l], c[l];
-	
-	printf("Search:");
-	fflush(stdin);
-	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
-	while (matched != 3){
-		scanf("%*[^\n]%*1[\n]");
-		fflush(stdin);// another method to clear input buffer
-		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
-		printf("and is typed correctly.\nBus Numer Plate : ");
-		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
-	}
-	if (c != '\n') scanf("%*[^\n]%*1[\n]");
-	for (int i = 0; i < strlen(s); i++) 
-		s[i] = toupper(s[i]);
-	c == '\n' ? '\0' : toupper(c);
+	char s[10], d[5], c[2];
 
-
-	while (temp != NULL)
+	if (temp == NULL)
 	{
-		if (strcmp(temp->s, s), strcmp(temp->d, d), strcmp(temp->c, c))
-		{
-			printf("key found\n");
-		}
+		printf("Underflow!\a\n");
+		return 1;
 	}
-	printf("Key not found\n");
+	else
+	{
+		int i;
+
+		printf("Search:");
+		fflush(stdin);
+		int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+		while (matched != 3){
+			scanf("%*[^\n]%*1[\n]");
+			fflush(stdin);// another method to clear input buffer
+			printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+			printf("and is typed correctly.\nBus Number Plate : ");
+			matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+		}
+		if (c != '\n') scanf("%*[^\n]%*1[\n]");
+		for (int i = 0; i < strlen(s); i++)
+			s[i] = toupper(s[i]);
+		c == '\n' ? '\0' : toupper(c);
+
+		while (temp != NULL)
+		{
+			if (!strcmp(temp->s, s) && !strcmp(temp->d, d) && !strcmp(temp->c, c))
+			{
+				printf("\nData found in %d position\n", count);
+				system("pause >nul");
+				return 1;
+			}
+			else
+			{
+				temp = temp->link;
+				count++;
+			}
+		}
+		printf("\n%s%s %s not found.\n", s, d, c);
+	}
 }

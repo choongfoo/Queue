@@ -1,7 +1,7 @@
 #ifndef FUNCTION
 #define FUNCTION
 #define l 1000
-#define N 1
+#define N 2
 
 typedef struct NODE
 {
