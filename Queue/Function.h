@@ -1,7 +1,7 @@
 #ifndef FUNCTION
 #define FUNCTION
 #define l 1000
-#define N 2
+#define N 10
 
 typedef struct NODE
 {
@@ -14,9 +14,17 @@ typedef struct NODE
 node *front, *rear, *temp;
 
 void Insert();
+
 int  Delete();
+
 void Display();
+
 void Search();
+
+int validplate(void);
+
 _Bool validnum();
+
 _Bool validchar();
+
 #endif

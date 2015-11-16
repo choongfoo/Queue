@@ -1,12 +1,8 @@
-﻿Build started 16/11/2015 1:18:35 PM.
+﻿Build started 17/11/2015 5:26:30 AM.
      1>Project "C:\Users\ChoongFoo\Documents\GitHub\Queue\Queue\Queue.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Function.c Main.c
-         Main.c
-     1>c:\users\choongfoo\documents\github\queue\queue\main.c(20): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Function.c
          Function.c
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(16): warning C4013: 'validplate' undefined; assuming extern returning int
      1>c:\users\choongfoo\documents\github\queue\queue\function.c(22): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
      1>c:\users\choongfoo\documents\github\queue\queue\function.c(22): warning C4024: 'fgets' : different types for formal and actual parameter 1
      1>c:\users\choongfoo\documents\github\queue\queue\function.c(31): warning C4047: 'function' : 'char *' differs in levels of indirection from 'char (*)[1000]'
@@ -14,38 +10,36 @@
      1>c:\users\choongfoo\documents\github\queue\queue\function.c(40): warning C4047: '=' : 'int' differs in levels of indirection from 'node *'
      1>c:\users\choongfoo\documents\github\queue\queue\function.c(45): warning C4047: '=' : 'int' differs in levels of indirection from 'NODE *'
      1>c:\users\choongfoo\documents\github\queue\queue\function.c(46): warning C4047: '=' : 'int' differs in levels of indirection from 'node *'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(109): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(114): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(111): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(116): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(115): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(120): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(117): warning C4047: '!=' : 'char [2]' differs in levels of indirection from 'int'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(117): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(122): warning C4047: '!=' : 'char [2]' differs in levels of indirection from 'int'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(122): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(118): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(119): warning C4047: '==' : 'char [2]' differs in levels of indirection from 'int'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(119): warning C4047: 'function' : 'int' differs in levels of indirection from 'char [2]'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(119): warning C4024: 'toupper' : different types for formal and actual parameter 1
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(140): warning C4047: 'return' : 'int' differs in levels of indirection from 'node *'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(175): warning C4098: 'Search' : 'void' function returning a value
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(184): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(123): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(124): warning C4047: '==' : 'char [2]' differs in levels of indirection from 'int'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(124): warning C4047: 'function' : 'int' differs in levels of indirection from 'char [2]'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(124): warning C4024: 'toupper' : different types for formal and actual parameter 1
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(164): warning C4047: 'return' : 'int' differs in levels of indirection from 'node *'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(199): warning C4098: 'Search' : 'void' function returning a value
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(206): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(186): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(208): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(190): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(212): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(192): warning C4047: '!=' : 'char [2]' differs in levels of indirection from 'int'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(192): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(214): warning C4047: '!=' : 'char [2]' differs in levels of indirection from 'int'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(214): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(193): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(195): warning C4047: '==' : 'char [2]' differs in levels of indirection from 'int'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(195): warning C4047: 'function' : 'int' differs in levels of indirection from 'char [2]'
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(195): warning C4024: 'toupper' : different types for formal and actual parameter 1
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(208): warning C4098: 'Search' : 'void' function returning a value
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(180): warning C4101: 'i' : unreferenced local variable
-         Generating Code...
-     1>c:\users\choongfoo\documents\github\queue\queue\function.c(121): warning C4716: 'validplate' : must return a value
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(215): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(217): warning C4047: '==' : 'char [2]' differs in levels of indirection from 'int'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(217): warning C4047: 'function' : 'int' differs in levels of indirection from 'char [2]'
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(217): warning C4024: 'toupper' : different types for formal and actual parameter 1
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(230): warning C4098: 'Search' : 'void' function returning a value
+     1>c:\users\choongfoo\documents\github\queue\queue\function.c(142): warning C4716: 'validplate' : must return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ChoongFoo\Documents\GitHub\Queue\Debug\Queue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ChoongFoo\Documents\GitHub\Queue\Debug\Queue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ChoongFoo\Documents\GitHub\Queue\Debug\Queue.lib" /MACHINE:X86 Debug\Function.obj
          Debug\Main.obj
@@ -54,4 +48,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.40
+Time Elapsed 00:00:00.28

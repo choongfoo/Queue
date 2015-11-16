@@ -12,8 +12,8 @@ main()
 	while (1)
 	{
 		system("cls");
-		printf("\n### Linked List Implementation of QUEUE Operations ###\n\n");
-		printf("THE SIZE OF QUEUE IS %d", N);
+		printf("\n### Queue of the buses at bus stop ###\n\n");
+		printf("THE LENGTH OF QUEUE IS %d", N);
 		printf("\n1 - Arrive\n2 - Leave\n3 - Print\n4 - Search\n5 - Exit\n");
 		printf("\nSelection: ");
 		fflush(stdin);
@@ -29,7 +29,7 @@ main()
 			system("pause");
 			break;
 		case 3:
-			printf("\nLinked List Implementation of Queue: Status:\n");
+			printf("\nQueue of the buses: Status:\n");
 			Display();
 			system("pause");
 			break;

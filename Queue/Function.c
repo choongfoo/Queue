@@ -15,7 +15,7 @@ void Insert()
 		temp = malloc(sizeof(node));
 		validplate();
 		
-		printf("\n\nType of bus: ");
+		printf("\nType of bus: ");
 		do
 		{
 			fflush(stdin);
@@ -24,7 +24,7 @@ void Insert()
 				temp->type[strlen(temp->type) - 1] = 0;
 		} while (validchar(true));
 		
-		printf("\n\nCapacity of bus: ");
+		printf("\nCapacity of bus: ");
 		do
 		{
 			fflush(stdin);
@@ -46,13 +46,13 @@ void Insert()
 			queue[count] = rear = temp;
 			count++;
 		}       /* Insert End */
-		printf("\nNode has been inserted at End Successfully !!\n");
+		printf("\nNew bus has been arrived!!\n");
 		system("pause");
 	}
 
 	else
 	{
-		printf("Overflow!\a\n");
+		printf("\nBus stop is overflow!\a\n");
 		system("pause");
 	}
 }
@@ -82,6 +82,7 @@ _Bool validnum()
 _Bool validchar()
 {
 	int len, ch;
+
 	len = strlen(temp->type);
 
 	if (len == 0)
@@ -94,7 +95,7 @@ _Bool validchar()
 	{
 		if (isdigit(temp->type[ch]))
 		{
-			printf("Name shall not consist of numbers! Please try again\n");
+			printf("Type of bus shall not consist of numbers! Please try again\n");
 			return true;
 		}
 	}
@@ -103,7 +104,11 @@ _Bool validchar()
 
 int validplate(void)
 {
-	printf("\n\nBus number plate: ");
+	node *t;
+
+	t = front;
+
+	printf("\nBus registration number: ");
 	// able to match putrajaya1234a
 	fflush(stdin); //i can't use scanf("%*[^\n]%*1[\n]") here and i don't know why!
 	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
@@ -118,14 +123,31 @@ int validplate(void)
 	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
 	temp->c == '\n' ? '\0' : toupper(temp->c);
 	//system("timeout -t 30");
+
+	if (front != NULL)
+	{
+		{if (!strcmp(t->s, temp->s) && !strcmp(t->d, temp->d) && !strcmp(t->c, temp->c))
+			{
+				printf("\nCan't insert a duplicate number!\a\n");
+				printf("\nPlease insert again!\n");
+				system("pause >nul");
+				validplate();
+			}
+			else
+			{
+				t = t->link;
+			}
+		}
+	}
 }
 
 int Delete()
 {
 	node *t;
+
 	if (front == NULL)
 	{
-		printf("Underflow!!!\n\a");
+		printf("No bus has been arrived!\n\a");
 		return -1;
 	}
 	else
@@ -133,10 +155,12 @@ int Delete()
 		t = front;
 		if (front == rear) 
 			rear = NULL;
+
 		front = front->link;
 		t->link = NULL;
-		printf("\nDeleted Node(From Front)with the Data: %s%s %s\n", t->s, t->d, t->c);
+		printf("\nBus left from front: %s%s %s\n", t->s, t->d, t->c);
 		free(t);
+		count--;
 		return(front);
 	}
 }
@@ -146,7 +170,7 @@ void Display()
 	node *t;
 
 	if (front == NULL) 
-		printf("Empty Queue\n\a");
+		printf("No bus has been arrived!\n\a");
 	else
 	{
 		t = front;
@@ -170,16 +194,14 @@ void Search()
 
 	if (temp == NULL)
 	{
-		printf("Underflow!\a\n");
+		printf("No bus has been arrived!\n\a");
 		system("pause");
 		return 1;
 	}
 
 	else
 	{
-		int i;
-
-		printf("Search:");
+		printf("\nSearch for bus registration number: ");
 		fflush(stdin);
 		int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
 		while (matched != 3){
@@ -210,10 +232,9 @@ void Search()
 			else
 			{
 				temp = temp->link;
-				count++;
 			}
 		}
-		printf("\n%s%s %s not found.\n", s, d, c);
+		printf("\nBus registration number: %s%s %s not found.\n", s, d, c);
 		system("pause");
 	}
 }
