@@ -35,7 +35,6 @@ main()
 			break;
 		case 4:
 			Search();
-			system("pause");
 			break;
 		case 5:
 			exit(0);

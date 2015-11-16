@@ -164,14 +164,17 @@ void Display()
 
 void Search()
 {
-	node *t;
 	char s[10], d[5], c[2];
+
+	temp = front;
 
 	if (temp == NULL)
 	{
 		printf("Underflow!\a\n");
+		system("pause");
 		return 1;
 	}
+
 	else
 	{
 		int i;
@@ -195,7 +198,12 @@ void Search()
 		{
 			if (!strcmp(temp->s, s) && !strcmp(temp->d, d) && !strcmp(temp->c, c))
 			{
-				printf("\nData found in %d position\n", count);
+				printf("Bus registration number: ");
+				printf("%s%s %s", temp->s,temp->d,temp->c);
+				printf("\nBus type: ");
+				printf("%s", temp->type);
+				printf("\nBus capacity: ");
+				printf("%s", temp->capacity);
 				system("pause >nul");
 				return 1;
 			}
@@ -206,5 +214,6 @@ void Search()
 			}
 		}
 		printf("\n%s%s %s not found.\n", s, d, c);
+		system("pause");
 	}
 }
