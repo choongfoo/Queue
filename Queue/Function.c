@@ -169,7 +169,7 @@ int Delete()
 
 		front = front->link;
 		t->link = NULL;
-		printf("\nBus left from front: %s%s %s\n", t->s, t->d, t->c);
+		printf("\nBus left from front: %s%s %c\n", t->s, t->d, t->c);
 		free(t);
 		count--;
 		return(front);
@@ -190,7 +190,7 @@ void Display()
 
 		while (t)
 		{
-			printf("[%s%s %s, %s, %s]->", t->s, t->d, t->c, t->type, t->capacity);
+			printf("[%s%s %c, %s, %s]->", t->s, t->d, t->c, t->type, t->capacity);
 			t = t->link;
 		}
 		printf("Rear\n\n");
