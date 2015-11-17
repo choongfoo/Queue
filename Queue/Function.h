@@ -8,7 +8,7 @@ typedef struct NODE
 	char s[10], d[5], c;
 	char type[l];
 	char capacity[l];
-	struct NODE *link;
+	struct NODE *next;
 }node;
 
 node *front, *rear, *temp;

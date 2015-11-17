@@ -5,10 +5,10 @@
 #include <stdbool.h>
 #include "Function.h"
 
-int queue[N] = { 0 };
-int count = 0;
+int queue[N] = { 0 }; //The bus stop length
+int count = 0; // we use count to determine number of our structures
 
-void Insert()
+void Insert() //Insert a new queue for new bus arrived
 {
 	if (count < N)
 	{
@@ -20,9 +20,11 @@ void Insert()
 		{
 			fflush(stdin);
 			fgets(&temp->type, l, stdin);
-			if (temp->type[strlen(temp->type) - 1] == '\n')
+			if (temp->type[strlen(temp->type) - 1] == '\n') 
 				temp->type[strlen(temp->type) - 1] = 0;
-		} while (validchar(true));
+			/* fgets actually takes \n as 1 char. for example
+			input aaaa and then enter, the strlen will be 5 because "aaaa\n". below is the fix */
+		} while (validchar(true)); //This is the boolean function to check the input is non-numeric
 		
 		printf("\nCapacity of bus: ");
 		do
@@ -31,21 +33,22 @@ void Insert()
 			fgets(&temp->capacity, l, stdin);
 			if (temp->capacity[strlen(temp->capacity) - 1] == '\n')
 				temp->capacity[strlen(temp->capacity) - 1] = 0;
-		} while (validnum(true));
+		} while (validnum(true)); //This is the boolean function to check the input is numeric
 
-		temp->link = NULL;
+		temp->next = NULL;
 
 		if (front == NULL)
 		{
-			queue[count] = front = rear = temp; /* First Node */
+			queue[count] = front = rear = temp; // First bus
 			count++;
 		}
 		else
 		{
-			queue[count] = rear->link = temp;
+			queue[count] = rear->next = temp;
 			queue[count] = rear = temp;
 			count++;
-		}       /* Insert End */
+			//Insert bus from the end
+		}       
 		printf("\nNew bus has been arrived!!\n");
 		system("pause");
 	}
@@ -57,10 +60,11 @@ void Insert()
 	}
 }
 
-_Bool validnum()
+_Bool validnum() //simple input checking for bus capacity
 {
 	int len, n;
-
+	/*int length will carry the value of the length of customerNum string.
+	For example, strlen("tttt") = 4*/
 	len = strlen(temp->capacity);
 
 	if (len == 0)
@@ -70,6 +74,8 @@ _Bool validnum()
 	}
 	for (n = 0; n < len; n++)
 	{
+		/*checks every characters whether one or more do carry something other than numerical value.
+		isdigit requires <ctype.h>*/
 		if (!isdigit(temp->capacity[n]))
 		{
 			printf("You need to input numerical values only! Please try again\n");
@@ -79,11 +85,11 @@ _Bool validnum()
 	return false;
 }
 
-_Bool validchar()
+_Bool validchar() //simple input checking for bus type
 {
 	int len, ch;
 
-	len = strlen(temp->type);
+	len = strlen(temp->type); //string length
 
 	if (len == 0)
 	{
@@ -102,7 +108,7 @@ _Bool validchar()
 	return false;
 }
 
-int validplate(void)
+int validplate(void) 
 {
 	node *t;
 
@@ -136,8 +142,8 @@ int validplate(void)
 	temp->c == '\n' ? '\0' : toupper(temp->c);
 
 	if (front != NULL)
-	{
-		{if (!strcmp(t->s, temp->s) && !strcmp(t->d, temp->d) && !strcmp(t->c, temp->c))
+	{ //For checking duplicate bus number plate to avoid insert existing number plate
+		if (!strcmp(t->s, temp->s) && !strcmp(t->d, temp->d) && t->c == temp->c)
 			{
 				printf("\nCan't insert a duplicate number!\a\n");
 				printf("\nPlease insert again!\n");
@@ -146,13 +152,12 @@ int validplate(void)
 			}
 			else
 			{
-				t = t->link;
+				t = t->next;
 			}
-		}
 	}
 }
 
-int Delete()
+int Delete() //Delete from the front of queue
 {
 	node *t;
 
@@ -167,8 +172,8 @@ int Delete()
 		if (front == rear) 
 			rear = NULL;
 
-		front = front->link;
-		t->link = NULL;
+		front = front->next;
+		t->next = NULL;
 		printf("\nBus left from front: %s%s %c\n", t->s, t->d, t->c);
 		free(t);
 		count--;
@@ -176,7 +181,7 @@ int Delete()
 	}
 }
 
-void Display()
+void Display() //Display the bus which has been arrive
 {
 	node *t;
 
@@ -191,17 +196,17 @@ void Display()
 		while (t)
 		{
 			printf("[%s%s %c, %s, %s]->", t->s, t->d, t->c, t->type, t->capacity);
-			t = t->link;
+			t = t->next;
 		}
 		printf("Rear\n\n");
 	}
 }
 
-void Search()
+void Search() //Search by bus registration number
 {
-	char s[10], d[5], c;
+	char s[10], d[5], c; //Declaration for comparation
 
-	temp = front;
+	temp = front; 
 
 	if (temp == NULL)
 	{
@@ -240,10 +245,10 @@ void Search()
 
 		while (temp != NULL)
 		{
-			if (!strcmp(temp->s, s) && !strcmp(temp->d, d) && !strcmp(temp->c, c))
+			if (!strcmp(temp->s, s) && !strcmp(temp->d, d) && temp->c == c) //Bus registration number comparing with the existing registration number
 			{
 				printf("Bus registration number: ");
-				printf("%s%s %s", temp->s,temp->d,temp->c);
+				printf("%s%s %c", temp->s,temp->d,temp->c);
 				printf("\nBus type: ");
 				printf("%s", temp->type);
 				printf("\nBus capacity: ");
@@ -253,10 +258,10 @@ void Search()
 			}
 			else
 			{
-				temp = temp->link;
+				temp = temp->next;
 			}
 		}
-		printf("\nBus registration number: %s%s %s not found.\n", s, d, c);
+		printf("\nBus registration number: %s%s %c not found.\n", s, d, c);
 		system("pause");
 	}
 }
