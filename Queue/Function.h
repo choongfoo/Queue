@@ -5,7 +5,7 @@
 
 typedef struct NODE
 {
-	char s[10], d[5], c[2];
+	char s[10], d[5], c;
 	char type[l];
 	char capacity[l];
 	struct NODE *link;

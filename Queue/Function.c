@@ -34,7 +34,7 @@ void Insert()
 		} while (validnum(true));
 
 		temp->link = NULL;
-		//I dont know why i set limit = 1 but i can insert 2 times
+
 		if (front == NULL)
 		{
 			queue[count] = front = rear = temp; /* First Node */
@@ -110,19 +110,30 @@ int validplate(void)
 
 	printf("\nBus registration number: ");
 	// able to match putrajaya1234a
-	fflush(stdin); //i can't use scanf("%*[^\n]%*1[\n]") here and i don't know why!
-	int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
-	while (matched != 3){
-		scanf("%*[^\n]%*1[\n]");
-		fflush(stdin);// another method to clear input buffer
-		printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
-		printf("and is typed correctly.\nBus Numer Plate : ");
-		matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", temp->s, temp->d, temp->c);
+	fflush(stdin); //Better if i use fflush stdin.
+	int matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
+	do{
+		while (matched != 3){
+			scanf("%*[^\n]%*1[\n]"); //another method to clear input buffer
+			fflush(stdin); //Just in case.
+			printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+			printf("and is typed correctly.\nBus Numer Plate : ");
+			matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
+		}
+
+		if (isdigit(temp->c))
+		{
+			printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+			printf("and is typed correctly.\nBus Numer Plate : ");
+			fflush(stdin);
+			matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
+		}
+	} while (isdigit(temp->c));
+	if (temp->c != '\n') {
+		scanf("%*[^\n]%*1[\n]"); fflush(stdin); //flushing twice 'cuz sometimes scanf("%*...") does not work
 	}
-	if (temp->c != '\n') scanf("%*[^\n]%*1[\n]");
 	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
 	temp->c == '\n' ? '\0' : toupper(temp->c);
-	//system("timeout -t 30");
 
 	if (front != NULL)
 	{
@@ -188,7 +199,7 @@ void Display()
 
 void Search()
 {
-	char s[10], d[5], c[2];
+	char s[10], d[5], c;
 
 	temp = front;
 
@@ -203,15 +214,26 @@ void Search()
 	{
 		printf("\nSearch for bus registration number: ");
 		fflush(stdin);
-		int matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
-		while (matched != 3){
-			scanf("%*[^\n]%*1[\n]");
-			fflush(stdin);// another method to clear input buffer
-			printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
-			printf("and is typed correctly.\nBus Number Plate : ");
-			matched = scanf("%9[a-zA-Z]%4[0-9]%1[a-zA-Z]", s, d, c);
+		int matched = scanf("%9[a-zA-Z]%4[0-9]%c", s, d, &c);
+		do {
+			while (matched != 3){
+				scanf("%*[^\n]%*1[\n]");
+				fflush(stdin);// another method to clear input buffer
+				printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+				printf("and is typed correctly.\nBus Number Plate : ");
+				matched = scanf("%9[a-zA-Z]%4[0-9]%c", s, d, &c);
+			}
+			if (isdigit(c))
+			{
+				printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
+				printf("and is typed correctly.\nBus Numer Plate : ");
+				fflush(stdin);
+				matched = scanf("%9[a-zA-Z]%4[0-9]%c", s, d, &c);
+			}
+		} while (isdigit(c));
+		if (c != '\n'){
+			scanf("%*[^\n]%*1[\n]"); fflush(stdin);
 		}
-		if (c != '\n') scanf("%*[^\n]%*1[\n]");
 		for (int i = 0; i < strlen(s); i++)
 			s[i] = toupper(s[i]);
 		c == '\n' ? '\0' : toupper(c);
