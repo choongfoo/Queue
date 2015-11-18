@@ -140,7 +140,7 @@ int validplate(void)
 		scanf("%*[^\n]%*1[\n]"); fflush(stdin); //flushing twice 'cuz sometimes scanf("%*...") does not work
 	}
 	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
-	temp->c == '\n' ? '\0' : toupper(temp->c);
+	
 
 	while (t != NULL)
 	{ //For checking duplicate bus number plate to avoid insert existing number plate
@@ -204,7 +204,7 @@ void Display() //Display the bus which has been arrive
 
 		while (t)
 		{
-			printf("[%s%s %c, %s, %s]->", t->s, t->d, t->c, t->type, t->capacity);
+			printf("[%s%s%c, %s, %s]->", t->s, t->d, t->c == '\n' ? '\0' : toupper(t->c), t->type, t->capacity);
 			t = t->next;
 		}
 		printf("Rear\n\n");
@@ -250,14 +250,14 @@ void Search() //Search by bus registration number
 		}
 		for (int i = 0; i < strlen(s); i++)
 			s[i] = toupper(s[i]);
-		c == '\n' ? '\0' : toupper(c);
 
 		while (temp != NULL)
 		{
 			if (!strcmp(temp->s, s) && !strcmp(temp->d, d) && temp->c == c) //Bus registration number comparing with the existing registration number
 			{
 				printf("Bus registration number: ");
-				printf("%s%s %c", temp->s,temp->d,temp->c);
+				printf("%s%s%c", temp->s, temp->d,
+					temp->c == '\n' ? '\0' : toupper(temp->c));
 				printf("\nBus type: ");
 				printf("%s", temp->type);
 				printf("\nBus capacity: ");
