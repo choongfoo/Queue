@@ -14,7 +14,7 @@ void Insert() //Insert a new queue for new bus arrived
 	{
 		temp = malloc(sizeof(node));
 		validplate();
-		
+
 		printf("\nType of bus: ");
 		do
 		{
@@ -44,7 +44,7 @@ void Insert() //Insert a new queue for new bus arrived
 		}
 		else
 		{
-			queue[count] = rear->next = temp;
+			rear->next = temp;
 			queue[count] = rear = temp;
 			count++;
 			//Insert bus from the end
@@ -135,25 +135,34 @@ int validplate(void)
 			matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
 		}
 	} while (isdigit(temp->c));
+
 	if (temp->c != '\n') {
 		scanf("%*[^\n]%*1[\n]"); fflush(stdin); //flushing twice 'cuz sometimes scanf("%*...") does not work
 	}
 	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
 	temp->c == '\n' ? '\0' : toupper(temp->c);
 
-	if (front != NULL)
+	while (t != NULL)
 	{ //For checking duplicate bus number plate to avoid insert existing number plate
-		if (!strcmp(t->s, temp->s) && !strcmp(t->d, temp->d) && t->c == temp->c)
+		if (t->c != NULL)
+		{
+			if (!strcmp(t->s, temp->s) && !strcmp(t->d, temp->d) && t->c == temp->c)
 			{
 				printf("\nCan't insert a duplicate number!\a\n");
 				printf("\nPlease insert again!\n");
-				system("pause >nul");
 				validplate();
 			}
-			else
+		}
+		if (t->c == NULL)
+		{
+			if (!strcmp(t->s, temp->s) && !strcmp(t->d, temp->d))
 			{
-				t = t->next;
+				printf("\nCan't insert a duplicate number!\a\n");
+				printf("\nPlease insert again!\n");
+				validplate();
 			}
+		}
+		t = t->next;
 	}
 }
 
