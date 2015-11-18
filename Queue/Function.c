@@ -117,7 +117,8 @@ int validplate(void)
 	printf("\nBus registration number: ");
 	// able to match putrajaya1234a
 	fflush(stdin); //Better if i use fflush stdin.
-	int matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
+	int matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c); //example: if temp->s matches [a-z] or [A-Z], matched will
+	//become 1. if got number, scanf will auto detect the number as temp->d part, hence matched = 2.
 	do{
 		while (matched != 3){
 			scanf("%*[^\n]%*1[\n]"); //another method to clear input buffer
@@ -127,19 +128,19 @@ int validplate(void)
 			matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
 		}
 
-		if (isdigit(temp->c))
+		if (isdigit(temp->c)) //when i enter 12345, c == 5. But no msia num plate has 5 numbers. so if retrieves digit, do the bottom
 		{
 			printf("You are not entering a valid number plate!\nPlease make sure there is no space in the number plate\n");
 			printf("and is typed correctly.\nBus Numer Plate : ");
 			fflush(stdin);
 			matched = scanf("%9[a-zA-Z]%4[0-9]%c", temp->s, temp->d, &temp->c);
 		}
-	} while (isdigit(temp->c));
+	} while (isdigit(temp->c)); //loop the validation when c==int
 
 	if (temp->c != '\n') {
 		scanf("%*[^\n]%*1[\n]"); fflush(stdin); //flushing twice 'cuz sometimes scanf("%*...") does not work
 	}
-	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]);
+	for (int i = 0; i < strlen(temp->s); i++) temp->s[i] = toupper(temp->s[i]); //change string to upper case.
 	
 
 	while (t != NULL)
