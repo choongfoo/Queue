@@ -184,7 +184,7 @@ int Delete() //Delete from the front of queue
 
 		front = front->next;
 		t->next = NULL;
-		printf("\nBus left from front: %s%s %c\n", t->s, t->d, t->c);
+		printf("\nBus left from front: %s%s%c\n", t->s, t->d, t->c);
 		free(t);
 		count--;
 		return(front);
@@ -209,12 +209,13 @@ void Display() //Display the bus which has been arrive
 			t = t->next;
 		}
 		printf("Rear\n\n");
+		printf("Number of buses in the queue: %d\n\n", count);
 	}
 }
 
 void Search() //Search by bus registration number
 {
-	char s[10], d[5], c; //Declaration for comparation
+	char s[10], d[5], c; //Declaration for comparision
 
 	temp = front; 
 
